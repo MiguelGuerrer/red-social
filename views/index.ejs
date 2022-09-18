@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <section class="center main-content">
+
+            <% for(let i = 0; i < posteos.length; i++) { %>
+                <% let post = posteos[i] %>
+                <article class="post">
+                    <div class="info-usuario">
+                        <img src="<%= post.foto_perfil %>" alt="">
+                        <h4>
+                            <a href="/users/detalleUsuario/1"><%= post.usuario %></a>
+                        </h4>
+                    </div>
+                    <div class="post-body">
+                        <a href="detallePost.html">
+                            <img src="<%= post.nombre_imagen %>" alt="">
+                        </a>
+                    </div>
+                    <ul class="post-reacciones">
+                        <li>
+                            <i class="fa-regular fa-heart"></i>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-comment"></i>
+                        </li>
+                    </ul>
+                    <div class="post-comentarios">
+                        <h4>Comentarios</h4>
+                        <ul>
+                            <% for(let j = 0; j < post.comentarios.length; j++) { %>
+                                <% let comentario = post.comentarios[j] %>
+                                <li>
+                                    <a href="/users/detalleUsuario/<%= comentario.id_usuario %>"><%= comentario.usuario %></a>
+                                    <span><%= comentario.comentario %></span>
+                                </li>
+                            <% } %>
+                            <a href="/posts/detallePost/<%= post.id %>">Ver más...</a>
+                        </ul>
+                    </div>
+                </article>
+            <% } %>
+           
+        </section>    
+    </main>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>
