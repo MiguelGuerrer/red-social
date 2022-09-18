@@ -5,7 +5,7 @@ const index = {
     usuarios: [
         {
             id: 1,
-            usuario: 'jperez',
+            usuario: 'mscott',
             email: 'michaelscott@gmail.com',
             contrasenia: 'scott1234',
             foto: '/public/images/scott.jpg',
@@ -14,7 +14,7 @@ const index = {
         },
         {
             id: 2,
-            usuario: 'jperez',
+            usuario: 'cdiaz',
             email: 'catadiaz@gmail.com',
             contrasenia: 'diaz1234',
             foto: '/public/images/diaz.jpg',
@@ -23,7 +23,7 @@ const index = {
         },
         {
             id: 3,
-            usuario: 'jperez',
+            usuario: 'mguerrero',
             email: 'gueerrerom@gmail.com',
             contrasenia: 'guerrerosss',
             foto: '/public/images/guerrero.jpg',
@@ -32,7 +32,7 @@ const index = {
         },
         {
             id: 4,
-            usuario: 'jperez',
+            usuario: 'wos',
             email: 'wos@gmail.com',
             contrasenia: 'wos234',
             foto: '/public/images/wos.jpg',
@@ -41,7 +41,7 @@ const index = {
         },
         {
             id: 5,
-            usuario: 'jperez',
+            usuario: 'dbenedetto',
             email: 'dariobenedetto@gmail.com',
             contrasenia: 'dario1234',
             foto: '/public/images/benedetto.jpg',
@@ -55,189 +55,196 @@ const index = {
         {
             id: 1,
             id_usuario: 1,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
+            foto_perfil: '/images/perfilscott.jpg',
+            usuario: 'Mscott',
             nombre_imagen: '/images/scott.jpg',
             texto_imagen: 'Michael',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 2,
+                    usuario: 'Cdiaz',
+                    comentario: 'Me gusta tu foto'
                 },
                 {
-                    id_usuario: 2,
-                    usuario: 'maria',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 3,
+                    usuario: 'Mguerrero',
+                    comentario: 'Buena foto'
                 },
             ]
         },
         {
             id: 2,
             id_usuario: 2,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'juan',
-            nombre_imagen: '/images/scott.jpg',
+            foto_perfil: '/images/diaz1.jpg',
+            usuario: 'Cdiaz',
+            nombre_imagen: '/images/cata-diaz.webp',
             texto_imagen: 'cata diaz',
-            comentarios: []
+            comentarios: [ {
+                id_usuario: 1,
+                usuario: 'Mscott',
+                comentario: 'me gusta tu foto'
+            },
+            {
+                id_usuario: 4,
+                usuario: 'Wos',
+                comentario: 'cuando nos vemos'
+            },]
         },
         {
             id: 3,
             id_usuario: 3,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/images/scott.jpg',
+            foto_perfil: '/images/listorti100x100.jpg',
+            usuario: 'Mguerrero',
+            nombre_imagen: '/images/listorti.jpg',
             texto_imagen: 'guerrero',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 5,
+                    usuario: 'Dbenedetto',
+                    comentario: 'Buena foto'
                 },
                 {
                     id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    usuario: 'Mscott',
+                    comentario: 'Me gusta tu foto'
                 },
             ]
         },
         {
             id: 4,
             id_usuario: 4,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/images/scott.jpg',
+            foto_perfil: '/images/wos100x100.jpg',
+            usuario: 'Wos',
+            nombre_imagen: '/images/wos.webp',
             texto_imagen: 'wos',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 2,
+                    usuario: 'Cdiaz',
+                    comentario: 'Hola'
                 },
                 {
                     id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    usuario: 'Mscott',
+                    comentario: 'Buena foto'
                 },
             ]
         },
         {
             id: 5,
             id_usuario: 5,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/img/dariobenedetto/mc.png',
+            foto_perfil: '/images/Benedetto100x100.jpg',
+            usuario: 'Dbenedetto',
+            nombre_imagen: '/images/benedetto.webp',
             texto_imagen: 'benedetto',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 3,
+                    usuario: 'Mguerrero',
+                    comentario: 'buena foto'
                 },
                 {
                     id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    usuario: 'Mscott',
+                    comentario: 'hola'
                 },
             ]
         },
         {
             id: 1,
             id_usuario: 1,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/img//catadiaz.png',
-            texto_imagen: 'diaz',
+            foto_perfil: '/images/perfilscott.jpg',
+            usuario: 'Mscott',
+            nombre_imagen: '/images/scott.jpg',
+            texto_imagen: 'Michael',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 2,
+                    usuario: 'Cdiaz',
+                    comentario: 'Me gusta tu foto'
                 },
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 3,
+                    usuario: 'Mguerrero',
+                    comentario: 'Buena foto'
                 },
             ]
         },
         {
             id: 2,
             id_usuario: 2,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/img/guerrero/mc.png',
-            texto_imagen: 'miguelguerrero',
-            comentarios: [
-                {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
-                },
-                {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
-                },
-            ]
+            foto_perfil: '/images/diaz1.jpg',
+            usuario: 'Cdiaz',
+            nombre_imagen: '/images/cata-diaz.webp',
+            texto_imagen: 'cata diaz',
+            comentarios: [ {
+                id_usuario: 1,
+                usuario: 'Mscott',
+                comentario: 'me gusta tu foto'
+            },
+            {
+                id_usuario: 4,
+                usuario: 'Wos',
+                comentario: 'cuando nos vemos'
+            },]
         },
         {
             id: 3,
             id_usuario: 3,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/img/guerrero/mc.png',
-            texto_imagen: 'miguelguerrero',
+            foto_perfil: '/images/listorti100x100.jpg',
+            usuario: 'Mguerrero',
+            nombre_imagen: '/images/listorti.jpg',
+            texto_imagen: 'guerrero',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 5,
+                    usuario: 'Dbenedetto',
+                    comentario: 'Buena foto'
                 },
                 {
                     id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    usuario: 'Mscott',
+                    comentario: 'Me gusta tu foto'
                 },
             ]
         },
         {
             id: 4,
             id_usuario: 4,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/img/michaelscott/mc.png',
-            texto_imagen: 'michael',
+            foto_perfil: '/images/wos100x100.jpg',
+            usuario: 'Wos',
+            nombre_imagen: '/images/wos.webp',
+            texto_imagen: 'wos',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 2,
+                    usuario: 'Cdiaz',
+                    comentario: 'Hola'
                 },
                 {
                     id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    usuario: 'Mscott',
+                    comentario: 'Buena foto'
                 },
             ]
         },
         {
             id: 5,
             id_usuario: 5,
-            foto_perfil: '/images/scott.jpg',
-            usuario: 'miguel',
-            nombre_imagen: '/img/benedetto/mc.png',
-            texto_imagen: 'dariobenedetto',
+            foto_perfil: '/images/Benedetto100x100.jpg',
+            usuario: 'Dbenedetto',
+            nombre_imagen: '/images/benedetto.webp',
+            texto_imagen: 'benedetto',
             comentarios: [
                 {
-                    id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    id_usuario: 3,
+                    usuario: 'Mguerrero',
+                    comentario: 'buena foto'
                 },
                 {
                     id_usuario: 1,
-                    usuario: 'juan',
-                    comentario: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa iure quia, consequuntur sunt explicabo a earum quis perferendis, atque natus modi veniam numquam totam fuga unde porro. Quos, culpa. Ipsam!'
+                    usuario: 'Mscott',
+                    comentario: 'hola'
                 },
             ]
         },
