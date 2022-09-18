@@ -77,7 +77,7 @@ const index = {
             id_usuario: 2,
             foto_perfil: '/images/scott.jpg',
             usuario: 'juan',
-            nombre_imagen: '/img/catadiaz/mc.png',
+            nombre_imagen: '/images/scott.jpg',
             texto_imagen: 'cata diaz',
             comentarios: []
         },
@@ -106,7 +106,7 @@ const index = {
             id_usuario: 4,
             foto_perfil: '/images/scott.jpg',
             usuario: 'miguel',
-            nombre_imagen: '/img/wos/mc.png',
+            nombre_imagen: '/images/scott.jpg',
             texto_imagen: 'wos',
             comentarios: [
                 {
