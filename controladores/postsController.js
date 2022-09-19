@@ -7,7 +7,8 @@ const postsController = {
       res.render('agregarPost');
     },
     detallePost: function(req, res) {
-      res.render('detallePost');
+      let post = index.posteos.find(post=>post.id==req.params.id)
+      res.render('detallePost',{post:post});
     }
 }
   

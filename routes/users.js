@@ -4,7 +4,7 @@ let userController = require('../controladores/userController')
 
 /* GET users listing. */
 router.get('/login', userController.login);
-router.get('/miPerfil', userController.miPerfil);
+router.get('/miPerfil/:id', userController.miPerfil);
 router.get('/registracion', userController.registracion);
 router.get('/editarPerfil', userController.editarPerfil);
 router.get('/detalleUsuario/:id', userController.detalleUsuario);

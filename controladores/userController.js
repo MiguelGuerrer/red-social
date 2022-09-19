@@ -1,13 +1,16 @@
 //requires
 const index = require("../db/index")
-
 //metodos
 const userController = {
     detalleUsuario: function(req, res) {
-        res.render('detalleUsuario');
+      let usuario = index.usuarios.find(usuario=>usuario.id==req.params.id)
+      let posteos = index.posteos.filter(post=>post.id_usuario==usuario.id)
+
+        res.render('detalleUsuario',{usuario,posteos});
       },
 
       editarPerfil: function(req, res) {
+
         res.render('editarPerfil');
       },
         
@@ -16,7 +19,9 @@ const userController = {
       },
 
       miPerfil: function(req, res) {
-        res.render('miPerfil');
+        let usuario = index.usuarios.find(usuario=>usuario.id==req.params.id)
+        let posteos = index.posteos.filter(post=>post.id_usuario==usuario.id)
+        res.render('miPerfil',{usuario,posteos});
       },
 
       registracion: function(req, res) {
