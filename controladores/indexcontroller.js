@@ -1,4 +1,4 @@
-//requires
+//requires     funcion require() 
 
 const index = require('../db/index')
 
@@ -13,6 +13,6 @@ const indexController = {
     },
 }
 
-//exportaciones
+//exportaciones ---  objeto nativo ,propiedad y variable
 
 module.exports = indexController;

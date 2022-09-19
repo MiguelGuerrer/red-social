@@ -1,5 +1,5 @@
 //requires
-
+const index = require("../db/index")
 
 //metodos
 const postsController = {
