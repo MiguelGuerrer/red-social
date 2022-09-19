@@ -13,6 +13,6 @@ const indexController = {
     },
 }
 
-//exportaciones ---  objeto nativo ,propiedad y variable
+//exportaciones ---  objeto nativo .propiedad y variable
 
 module.exports = indexController;
