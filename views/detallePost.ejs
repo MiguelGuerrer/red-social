@@ -14,7 +14,7 @@
                     <img src="<%=post.foto_perfil%>" alt="">
                     <p><a href="detalleUsuario.html"><%=post.usuario%></a></p>
                 </div>
-                <img class="photo" src="https://via.placeholder.com/500x600" alt="">
+                <img class="photo" src="<%=post.nombre_imagen%>" alt="">
             </section>
             <section class="right">
                 <h4>Comentarios</h4>
@@ -24,13 +24,23 @@
                         <button type="submit">Comentar</button>
                     </form>
                     <div>
+
+                        <% for(let j = 0; j < post.comentarios.length; j++) { %>
+                            <% let comentario = post.comentarios[j] %>
+                            <li>
+                                <a href="/users/detalleUsuario/<%= comentario.id_usuario %>"><%= comentario.usuario %></a>
+                                <span><%= comentario.comentario %></span>
+                            </li>
+                        <% } %>
+
+
                         <% for(let i = 0; i < post.comentarios.length; i++) { %>
                             <% let comentario = post.comentarios[i] %>
                             <article class="comment">
                                 <img src="https://via.placeholder.com/40" alt="">
                                 <section class="content">
-                                    <a class="user" href="detalleUsuario.html">Nombre</a>
-                                    <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime voluptas</span>
+                                    <a class="user" href="detalleUsuario.html/<%=comentario.id_usuario%></a>
+                                    <span class="text"></span>
                                 </section>
                             </article>
                         <% } %>
