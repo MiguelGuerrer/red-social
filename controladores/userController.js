@@ -1,5 +1,7 @@
 //requires
-const index = require("../db/index")
+const index = require("../models")
+
+const usarios = db.index;
 //metodos
 const userController = {
     detalleUsuario: function(req, res) {

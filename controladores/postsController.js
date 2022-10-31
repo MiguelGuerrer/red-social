@@ -1,5 +1,8 @@
 //requires
-const index = require("../db/index")
+const index = require("../database/")
+
+const posteos = db.index;
+const comentarios = db.index;
 
 //metodos
 const postsController = {

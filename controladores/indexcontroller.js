@@ -1,6 +1,6 @@
 //requires     funcion require() 
 
-const index = require('../db/index')
+const index = require('../database/models')
 
 //metodos
 
