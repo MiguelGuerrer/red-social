@@ -1,12 +1,11 @@
 //requires
-const index = require("../models")
+const db = require("../database/models")
 
-const usarios = db.index;
 //metodos
 const userController = {
     detalleUsuario: function(req, res) {
-      let usuario = index.usuarios.find(usuario=>usuario.id==req.params.id)
-      let posteos = index.posteos.filter(post=>post.id_usuario==usuario.id)
+      let usuario = db.Usuario.find(usuario=>usuario.id==req.params.id)
+      let posteos = db.Posteo.filter(post=>post.id_usuario==usuario.id)
 
         res.render('detalleUsuario',{usuario,posteos});
       },
@@ -21,8 +20,8 @@ const userController = {
       },
 
       miPerfil: function(req, res) {
-        let usuario = index.usuarios.find(usuario=>usuario.id==req.params.id)
-        let posteos = index.posteos.filter(post=>post.id_usuario==usuario.id)
+        let usuario = db.usuarios.find(usuario=>usuario.id==req.params.id)
+        let posteos = db.posteos.filter(post=>post.id_usuario==usuario.id)
         res.render('miPerfil',{usuario,posteos});
       },
 

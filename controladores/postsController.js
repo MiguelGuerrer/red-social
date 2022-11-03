@@ -1,8 +1,5 @@
 //requires
-const index = require("../database/")
-
-const posteos = db.index;
-const comentarios = db.index;
+const db = require("../database/models")
 
 //metodos
 const postsController = {
@@ -10,7 +7,7 @@ const postsController = {
       res.render('agregarPost');
     },
     detallePost: function(req, res) {
-      let post = index.posteos.find(post=>post.id==req.params.id)
+      let post = db.Posteo.find(post=>post.id==req.params.id)
       res.render('detallePost',{post:post});
     }
 }
