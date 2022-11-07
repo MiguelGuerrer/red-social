@@ -12,13 +12,13 @@
         <h1>Registrate</h1>
         </section>
 
-        <form action="/users/login" method="POST">
-            <input type="text" placeholder="usuario" name="user"> <br>
-            <input type="text" placeholder="email" name="email"> <br>
-            <input type="text" placeholder="contraseña" name="password"> <br>
-            <input type="number" placeholder="dni" name="dni"> <br>
-            <input type="date" placeholder="fecha de nacimiento" name="fecha"> <br>
-            <input type="file" name="photo"> <br>
+        <form enctype="multipart/form-data" action="/users/registrarUsuario" method="POST">
+            <input required type="text" placeholder="usuario" name="user"> <br>
+            <input required type="text" placeholder="email" name="email"> <br>
+            <input required type="text" placeholder="contraseña" name="password"> <br>
+            <input required type="number" placeholder="dni" name="dni"> <br>
+            <input required type="date" placeholder="fecha de nacimiento" name="fecha"> <br>
+            <input required type="file" name="photo"> <br>
             <input type="submit" value="registrate" >
         </form>
     </main>
