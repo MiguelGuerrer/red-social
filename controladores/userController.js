@@ -46,11 +46,30 @@ const userController = {
 
   signin: function (req, res) {
     if (req.body.password.length<3) {
-      locals.errors = "la contrasenia debe tener al menos 3 caracteres"
+      res.locals.errors = "la contrasenia debe tener al menos 3 caracteres"
       return res.render('login');
-
     }
-  
+    db.Usuario.findOne({
+      where: {
+        email: req.body.email,
+      }
+    }) 
+    .then((usuario)=>{
+      if (usuario == null) {
+        res.locals.errors = "email no existe"
+        return res.render('login');
+      }
+      if (bcrypt.compareSync(req.body.password,usuario.contrasenia)==false && false) {
+        res.locals.errors = "contrasenia incorrecta"
+        return res.render('login');
+      }
+      req.session.usuario = usuario.dataValues
+      req.locals.usuario = usuario.dataValues
+      res.cookie("userId",usuario.id,{
+        maxAge:10*60*1000
+      })   
+      res.redirect("/")
+ })
   },
 }
 
