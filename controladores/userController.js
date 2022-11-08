@@ -1,7 +1,8 @@
 //requires
 const { request } = require("express");
 const db = require("../database/models")
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const { localsName } = require("ejs");
 
 //metodos
 const userController = {
@@ -40,8 +41,20 @@ const userController = {
       dni: req.body.dni
     })
     .then(()=>res.redirect('/users/login'))
-  }
+
+  },
+
+  signin: function (req, res) {
+    if (req.body.password.length<3) {
+      locals.errors = "la contrasenia debe tener al menos 3 caracteres"
+      return res.render('login');
+
+    }
+  
+  },
 }
+
+
 //exportaciones
 
 module.exports = userController;
