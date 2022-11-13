@@ -63,8 +63,8 @@ const userController = {
         res.locals.errors = "contrasenia incorrecta"
         return res.render('login');
       }
-      req.session.usuario = usuario.dataValues
-      req.locals.usuario = usuario.dataValues
+
+      req.session.usuario = usuario
       res.cookie("userId",usuario.id,{
         maxAge:10*60*1000
       })   

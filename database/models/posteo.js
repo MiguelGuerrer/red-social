@@ -31,10 +31,22 @@ module.exports = function (sequelize, dataTypes ) {
         timestamps : true,
         underscored : false
     }
-
+    let Posteo = sequelize.define(alias, cols, config);
+    Posteo.associate=(models)=>{
+        Posteo.belongsTo(models.Usuario,{
+            foreignKey:'id_usuario',
+            as:'usuario'
+        })
+        Posteo.belongsToMany(models.Usuario,{
+            through:'comentarios',
+            as:'comentario',
+            foreignKey:'id_posteo',
+            otherKey:'id_usuario'
+        })
+    }
     /* 5to paso : crear el metodo define() con los 3 parametros */
     
-    return sequelize.define(alias, cols, config);
+    return Posteo;
 
    
 }

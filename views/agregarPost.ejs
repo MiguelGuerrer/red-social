@@ -9,21 +9,18 @@
         <main>
             <section class="center main-content">
             <h1>Nuevo Post</h1>
-            <form action="/users/login" method="post">
-                <div>
-                    <label for="usuario"> Id usuario</label>
-                    <input type="number" name="usuario"  placeholder="Id del usuario">
-                </div>
+            <form action="/posts/agregarPost" enctype="multipart/form-data" method="post">
+                
                 <div>
                     <label for="imagen"> Imagen</label>
-                    <input type="file" name="imagen  placeholder="Id del usuario">
+                    <input type="file" required name="imagen"  placeholder="Id del usuario">
                 </div>
                 <div>
                     <label for="post"> Texto</label>
-                    <input type="text" name="post"  placeholder="Escribe un texto">
+                    <input type="text" required name="post"  placeholder="Escribe un texto">
                 </div>
                 
-                <button type="submit">Publicar</button>
+                <button type="submit"required>Publicar</button>
                 
                         </form>
             </section>

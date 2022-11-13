@@ -6,8 +6,4 @@ const db = require('../database/models')
 router.get('/', indexController.home);
 router.get('/busqueda', indexController.busqueda);
 
-router.get('/prueba', async(req,res)=>{
-res.send(await db.Comentario.findAll())
-});
-
 module.exports = router;
