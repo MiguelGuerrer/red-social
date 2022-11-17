@@ -7,10 +7,18 @@ const { localsName } = require("ejs");
 //metodos
 const userController = {
   detalleUsuario: function (req, res) {
-    let usuario = db.Usuario.find(usuario => usuario.id == req.params.id)
-    let posteos = db.Posteo.filter(post => post.id_usuario == usuario.id)
 
-    res.render('detalleUsuario', { usuario, posteos });
+    db.Usuario.findByPk(req.params.id, {
+      include: {
+        all: true,
+        nested: true
+      }
+    })
+    .then((usuariodb)=> {
+      //res.send(usuario)
+      res.render('detalleUsuario',{ usuariodb: usuariodb });
+    })
+
   },
 
   editarPerfil: function (req, res) {
@@ -59,8 +67,8 @@ const userController = {
         res.locals.errors = "email no existe"
         return res.render('login');
       }
-      if (bcrypt.compareSync(req.body.password,usuario.contrasenia)==false && false) {
-        res.locals.errors = "contrasenia incorrecta"
+      if (bcrypt.compareSync(req.body.password, usuario.contrasenia) == false) {
+        res.locals.errors = "contraseña incorrecta"
         return res.render('login');
       }
 
@@ -71,6 +79,13 @@ const userController = {
       res.redirect("/")
  })
   },
+
+  logout: function(req, res) {
+    req.session.destroy()
+    res.clearCookie("userId");
+    res.redirect('/users/login')
+  }
+  
 }
 
 
