@@ -16,7 +16,7 @@ const indexController = {
     })
 
     .then((posteos)=>{
-      res.send('index', {posteos: posteos})
+      res.render('index', {posteos: posteos})
     })
       //res.render('index', {posteos: index.posteos});
     },
@@ -38,7 +38,7 @@ const indexController = {
         //res.send(posteos)
         res.render('resultadoBusqueda',{posteos:posteos});
       })
-      
+
     },
 }
 
