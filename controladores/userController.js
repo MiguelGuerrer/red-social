@@ -1,8 +1,6 @@
 //requires
-const { request } = require("express");
 const db = require("../database/models")
 const bcrypt = require('bcryptjs');
-const { localsName } = require("ejs");
 
 //metodos
 const userController = {
@@ -14,10 +12,9 @@ const userController = {
         nested: true
       }
     })
-    .then((usuariodb)=> {
-      //res.send(usuario)
-      res.render('detalleUsuario',{ usuariodb: usuariodb });
-    })
+      .then((usuariodb) => {
+        res.render('detalleUsuario', { usuariodb: usuariodb });
+      })
 
   },
 
@@ -31,9 +28,18 @@ const userController = {
   },
 
   miPerfil: function (req, res) {
-    let usuario = db.usuarios.find(usuario => usuario.id == req.params.id)
-    let posteos = db.posteos.filter(post => post.id_usuario == usuario.id)
-    res.render('miPerfil', { usuario, posteos });
+
+    db.Usuario.findByPk(req.session.usuario.id, {
+      include: {
+        all: true,
+        nested: true
+      }
+    })
+      .then((usuariodb) => {
+        //res.send(usuariodb)
+        res.render('miPerfil', { usuariodb: usuariodb });
+      })
+   
   },
 
   registracion: function (req, res) {
@@ -42,42 +48,43 @@ const userController = {
 
   registrarUsuario: function (req, res) {
     db.Usuario.create({
-      email: req.body.email,
-      contrasenia: bcrypt.hashSync(req.body.password,12),
+      email: req.body.email, // req.body.email = juanperez@gmail.com
+      user: req.body.user, // req.body.user = jperez
+      contrasenia: bcrypt.hashSync(req.body.password, 12), //salt
       foto: req.file.filename,
       fecha: req.body.fecha,
       dni: req.body.dni
     })
-    .then(()=>res.redirect('/users/login'))
-
+    .then(() => res.redirect('/users/login'))
+    .catch(error => console.log(error))
   },
 
   signin: function (req, res) {
-    if (req.body.password.length<3) {
+    if (req.body.password.length < 3) {
       res.locals.errors = "la contrasenia debe tener al menos 3 caracteres"
       return res.render('login');
     }
     db.Usuario.findOne({
       where: {
-        email: req.body.email,
+        email: req.body.email, 
       }
-    }) 
-    .then((usuario)=>{
-      if (usuario == null) {
-        res.locals.errors = "email no existe"
-        return res.render('login');
-      }
-      if (bcrypt.compareSync(req.body.password, usuario.contrasenia) == false) {
-        res.locals.errors = "contraseña incorrecta"
-        return res.render('login');
-      }
+    })
+    .then((usuario) => {
+        if (usuario == null) {
+          res.locals.errors = "email no existe"
+          return res.render('login');
+        }
+        if (bcrypt.compareSync(req.body.password, usuario.contrasenia) == false) {
+          res.locals.errors = "contraseña incorrecta"
+          return res.render('login');
+        }
 
-      req.session.usuario = usuario
-      res.cookie("userId",usuario.id,{
-        maxAge:10*60*1000
-      })   
-      res.redirect("/")
- })
+        req.session.usuario = usuario
+        res.cookie("userId", usuario.id, {
+          maxAge: 10 * 60 * 1000 //10 min
+        })
+        res.redirect("/")
+      })
   },
 
   logout: function(req, res) {
@@ -85,7 +92,6 @@ const userController = {
     res.clearCookie("userId");
     res.redirect('/users/login')
   }
-  
 }
 
 

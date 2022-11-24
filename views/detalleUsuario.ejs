@@ -29,7 +29,7 @@
                 <% for(let i = 0; i < usuariodb.posteos.length; i++) { %>
                     <% let post = usuariodb.posteos[i] %>
                     <article class="post">
-                        <a href="detallePost.html">
+                        <a href="/users/detallePost/<%=post.id%>">
                             <img src="/images/posts/<%=post.nombre_imagen%>" alt="">
                         </a>
                     </article>

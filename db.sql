@@ -5,7 +5,7 @@ CREATE TABLE usuarios(
 id int  unsigned primary key auto_increment,
 user varchar(50) not null,
 email varchar(50) not null,
-contrasenia varchar(50) not null,
+contrasenia varchar(150) not null,
 foto  varchar (200) not null,
 fecha  date not null,
 DNI int unsigned not null,
@@ -48,12 +48,12 @@ updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 /*USUARIOS*/
-INSERT INTO  usuarios (`id`, `email`, `contrasenia`, `foto`, `fecha`, `DNI`) values 
-(default,'michaelscott@gmail.com','scott1234','/public/images/scott.jpg','1988-06-22',34683203);
-(default,'catadiaz@gmail.com','diaz1234','/public/images/diaz.jpg','1978-06-12',89753203);
-(default,'gueerrerom@gmail.com','guerrerosss','/public/images/guerrero.jpg','1999-06-13',44362014);
-(default,'wos@gmail.com','wos234','/public/images/wos.jpg','2005-07-12',09873203);
-(default,'dariobenedetto@gmail.com','dario1234','/public/images/benedetto.jpg','1972-09-02',78353203);
+INSERT INTO  usuarios (`id`, `user`, `email`, `contrasenia`, `foto`, `fecha`, `DNI`) values 
+(default,'mscott','michaelscott@gmail.com','scott1234','/public/images/scott.jpg','1988-06-22',34683203),
+(default,'catuu','catadiaz@gmail.com','diaz1234','/public/images/diaz.jpg','1978-06-12',89753203),
+(default,'guerrero','gueerrerom@gmail.com','guerrerosss','/public/images/guerrero.jpg','1999-06-13',44362014),
+(default,'wosin','wos@gmail.com','wos234','/public/images/wos.jpg','2005-07-12',09873203),
+(default,'elpipa','dariobenedetto@gmail.com','dario1234','/public/images/benedetto.jpg','1972-09-02',78353203);
 
 /*POSTEOS*/
 INSERT INTO posteos(id, id_usuario, nombre_imagen, texto_imagen)
@@ -78,6 +78,21 @@ INSERT INTO comentarios (`id`,`id_posteo`,`id_usuario`,`texto_comentario`) value
 (default, 4, 4, 'cuando nos vemos');
 
 
-
+INSERT INTO posteos
+(id_usuario, nombre_imagen, texto_imagen, createdAt, updatedAt) VALUES
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'LeoMessi20092010_pic_fcb-arsenal62.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669251470927.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669251323689.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27'),
+(1, 'imagen-1669242581638.jpeg', 'hola', '2022-11-23 22:16:27', '2022-11-23 22:16:27');
 
 
