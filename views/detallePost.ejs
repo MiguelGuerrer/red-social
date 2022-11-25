@@ -8,39 +8,35 @@
 
     <main>
         <div class="post-detail container">
-
             <section class="center main-content post">
                 <div class="info-usuario">
-                    <img src="<%=post.foto_perfil%>" alt="">
-                    <p><a href="detalleUsuario.html"><%=post.usuario%></a></p>
+                    <img class="foto-usuario" src="/images/usuarios/<%= post.usuario.foto %>" alt="">
+                    <p>
+                        <a href="/users/detalleUsuario/<%= post.usuario.id %>  "><%= post.usuario.user %></a>
+                    </p>
                 </div>
-                <img class="photo" src="<%=post.nombre_imagen%>" alt="">
+                <img height="415px" class="photo" src="</images/posts/<%= post.nombre_imagen %> " alt="">
+                <p class="letradetalle">  <i class="fa-solid fa-heart"></i></p>
+                <p class="letradetalle1"> <%= post.texto %></p>
             </section>
+
             <section class="right">
                 <h4>Comentarios</h4>
                 <section class="comments">
-                    <form action="" class="comment-form">
+                    <form action="/users/login" class="comment-form">
                         <input type="text" class="input" placeholder="Agregar comentario">
                         <button type="submit">Comentar</button>
                     </form>
                     <div>
 
-                        <% for(let j = 0; j < post.comentarios.length; j++) { %>
-                            <% let comentario = post.comentarios[j] %>
-                            <li>
-                                <a href="/users/detalleUsuario/<%= comentario.id_usuario %>"><%= comentario.usuario %></a>
-                                <span><%= comentario.comentario %></span>
-                            </li>
-                        <% } %>
+                        <% for (let i = 0; i < post.comentario.length; i++) { %> 
 
-
-                        <% for(let i = 0; i < post.comentarios.length; i++) { %>
-                            <% let comentario = post.comentarios[i] %>
                             <article class="comment">
-                                <img src="https://via.placeholder.com/40" alt="">
+
+                                <img width="30px" class="imagenperfil" src="/images/usuarios/<%= post.comentario[i].usuario.foto %>" alt="">
                                 <section class="content">
-                                    <a class="user" href="detalleUsuario.html/<%=comentario.id_usuario%></a>
-                                    <span class="text"></span>
+                                    <a class="user" href="/users/detalleUsuario/<%= post.comentario[i].usuario.id %>"><%= post.comentario[i].usuario.user %></a>
+                                    <span class="text"><%= post.comentario[i].texto_comentario %></span>
                                 </section>
                             </article>
                         <% } %>
