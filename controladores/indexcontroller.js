@@ -37,6 +37,7 @@ const indexController = {
       .then((posteos)=> {
         //res.send(posteos)
         res.render('resultadoBusqueda',{posteos:posteos});
+        res.render('resultadoBusqueda',{posteos:posteos, termino: busqueda});
       })
 
     },

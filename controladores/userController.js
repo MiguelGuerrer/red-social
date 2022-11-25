@@ -50,7 +50,7 @@ const userController = {
     db.Usuario.create({
       email: req.body.email, // req.body.email = juanperez@gmail.com
       user: req.body.user, // req.body.user = jperez
-      contrasenia: bcrypt.hashSync(req.body.password, 12), //salt
+      contrasenia: bcrypt.hashSync(req.body.password, 12), 
       foto: req.file.filename,
       fecha: req.body.fecha,
       dni: req.body.dni

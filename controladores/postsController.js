@@ -7,8 +7,18 @@ const postsController = {
       res.render('agregarPost');
     },
     detallePost: function(req, res) {
-      let post = db.Posteo.find(post=>post.id==req.params.id)
-      res.render('detallePost',{post:post});
+      db.Posteo.findOne({
+        include: {
+          all: true,
+          nested: true
+        },
+        where: {id: req.params.id}
+      })
+      .then(post => {
+        //res.send(post)
+        res.render('detallePost',{post:post});
+      })
+      
     },
     crearPost: function(req, res) {
       db.Posteo.create({
